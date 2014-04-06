@@ -1,8 +1,13 @@
-require 'sinatra'
+require "bundler/setup"
+require "sinatra"
 require "sinatra/activerecord"
+require "omniauth-twitter"
 
 #CONFIG
 set :database, "sqlite3:///db/db.sqlite3"
+set :port, 80
+set :bind, '0.0.0.0'
+
 configure do
     enable :sessions
 
