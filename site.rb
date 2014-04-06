@@ -1,5 +1,6 @@
 require 'sinatra'
+require 'thin'
 
 get '/' do
-    "hello sami"
+    erb index
 end
