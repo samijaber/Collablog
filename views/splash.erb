@@ -1,1 +1,5 @@
+<% if current_user %>
+<a href="<%= @@app_path %>">go to app</a>
+<% else %>
 <a href="<%= @@auth_path %>">log in</a>
+<% end %>
