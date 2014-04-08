@@ -1,10 +1,10 @@
 class CreateBlog < ActiveRecord::Migration
   def up
     create_table :blogs do |t|
-      t.integer :user_id
+      t.string :screen_name
       t.string :hashtag
       t.string :title
-      t.datetime :created_at
+      t.timestamps
     end
   end
 

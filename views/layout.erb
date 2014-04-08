@@ -12,11 +12,16 @@
 
 <body>
 
+<% if current_user %>
+<a href="<%= @@app_path %>">
+<% else %>
+<a>
+<% end %>
 <h1>
 DogeBarks
 </h1>
-	<img id="masterDoge" src="images/doge.jpeg">
-	<div id="caption">Master Barker</div>
+	<img id="masterDoge" src="/images/doge.jpeg">
+	<div id="caption">Master Barker</div></a>
 <%= yield %>
 </body>
 

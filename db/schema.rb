@@ -10,17 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406061211) do
-
-  create_table "authors", id: false, force: true do |t|
-    t.integer "id"
-    t.string  "nickname"
-  end
+ActiveRecord::Schema.define(version: 20140407151643) do
 
   create_table "blogs", force: true do |t|
-    t.integer  "user_id"
+    t.string   "screen_name"
     t.string   "hashtag"
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blogs_saved_tweets", force: true do |t|
+    t.integer "blog_id"
+    t.integer "saved_tweet_id"
+  end
+
+  create_table "permissions", force: true do |t|
+    t.integer  "blog_id"
+    t.string   "screen_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "saved_tweet", force: true do |t|
+    t.integer  "blog_id"
+    t.string   "text"
+    t.string   "url"
+    t.string   "screen_name"
     t.datetime "created_at"
   end
 
