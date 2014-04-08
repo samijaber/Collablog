@@ -24,7 +24,10 @@
 <p><%= @blog.hashtag %></p>
 <ul>
 <% @tweets.each do |tweet| %>
-<li><a href="<%= tweet.uri %>"><%= tweet.text %> - <strong><%= tweet.user.screen_name %></strong></a></li>
+<li>
+<img class="avatar" src="<%= tweet.user.profile_image_uri %>">
+<a href="<%= tweet.uri %>"><%= tweet.text %> - <strong><%= tweet.user.screen_name %></strong></a>
+</li>
 <% end %>
 </ul>
 <a href="<%= @@app_path %>">back</a>

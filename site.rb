@@ -37,7 +37,6 @@ get '/auth/twitter/callback' do
   session[:credentials] = env['omniauth.auth'][:credentials]
   session[:uid] = env['omniauth.auth'][:uid]
   session[:info] = env['omniauth.auth'][:info]
-  session[:portrait] = env['omniauth.auth'][:extra][:profile_image_url]
   redirect to(@@app_path)
 end
 
