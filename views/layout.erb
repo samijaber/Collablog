@@ -22,6 +22,9 @@ DogeBarks
 </h1>
 	<img id="masterDoge" src="/images/doge.jpeg">
 	<div id="caption">Master Barker</div></a>
+	<% unless flash[:message].nil? %>
+        <div><%= flash[:message] %></div>
+        <% end %>
 <%= yield %>
 </body>
 

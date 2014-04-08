@@ -1,6 +1,7 @@
 require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/flash'
 require 'omniauth-twitter'
 require 'net/http'
 require 'net/https'
@@ -80,9 +81,9 @@ get '/blog/:id' do
   end
   @permissions = @blog.permissions
   @tweets = []
-  @tweets += client.search("from:" + @blog.screen_name + " " + @blog.hashtag).take(100).to_a
+  @tweets += client.search("from:" + @blog.screen_name + " " + @blog.hashtag).take(100).to_a.select{|x| x.created_at >= @blog.created_at}
   @permissions.each do |permission|
-    @tweets += client.search("from:" + permission.screen_name + " " + @blog.hashtag).take(100).to_a
+    @tweets += client.search("from:" + permission.screen_name + " " + @blog.hashtag).take(100).to_a.select{|x| x.created_at >= @blog.created_at}
   end
   @tweets.sort_by!{|x| x.created_at}
   @tweets.reverse!
@@ -100,6 +101,17 @@ post '/blog/:id/adduser' do
   redirect to(@@app_path) unless session[:info][:nickname] == blog.screen_name
   screenname = params[:screenname]
   Permission.create({:blog_id => params[:id], :screen_name => params[:screenname]})
+  flash[:message] = "added user " + screenname
+  redirect to(@@blog_path + params[:id])
+end
+
+get '/blog/:id/deluser/:screenname' do
+  redirect to(@@auth_path) unless current_user
+  blog = Blog.find params[:id]
+  redirect to(@@app_path) unless session[:info][:nickname] == blog.screen_name
+  screenname = params[:screenname]
+  Permission.delete(Permission.where("blog_id = ? AND screen_name = ?", blog.id, screenname))
+  flash[:message] = "deleted user " + screenname
   redirect to(@@blog_path + params[:id])
 end
 

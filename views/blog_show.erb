@@ -11,7 +11,12 @@
 <p><%= @permissions.length %> user<%= @permissions.length==1?"":"s" %> posting</p>
 <ul>
 <% @permissions.each do |permission| %>
-<li><a href="http://www.twitter.com/<%= permission.screen_name %>"><%= permission.screen_name %></a></li>
+<li>
+<a href="http://www.twitter.com/<%= permission.screen_name %>"><%= permission.screen_name %></a>
+<% if current_user and session[:info][:nickname] == @blog.screen_name %>
+<div><a method="post" href="<%= @@blog_path %><%= @blog.id %>/deluser/<%= permission.screen_name %>">remove access</a></div>
+<% end %>
+</li>
 <% end %>
 </ul>
 <hr>
