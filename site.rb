@@ -49,7 +49,7 @@ end
 
 get '/' do
   if !request.websocket?
-    erb :socket
+    erb :splash
   else
     request.websocket do |ws|
       ws.onopen do
@@ -91,7 +91,7 @@ get '/blog/:id' do
   @blog = Blog.find params[:id]
   @permissions = @blog.permissions
   @tweets = []
-  if @blog.updated_at < 1.mins.ago
+  if true
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['CONSUMER_KEY']
       config.consumer_secret     = ENV['CONSUMER_SECRET']

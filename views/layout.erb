@@ -28,5 +28,17 @@ DogeBarks
 <%= yield %>
 </main>
 </body>
-
+<script>
+function imgify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        return '<a href="' + url + '"><img onerror="this.style.display=\'none\'" src="' + url + '">' + url + '</a>';
+    })
+}
+var tweets = document.querySelectorAll("div.tweet");
+for(var i = 0; i < tweets.length; i++)
+{
+  tweets[i].innerHTML = imgify(tweets[i].innerText);
+}
+</script>
 </html>
