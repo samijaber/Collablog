@@ -1,9 +1,11 @@
 body,html
-{
-background-color: #352D2D;
-background: -webkit-gradient(linear, left center, right center, from(#575555), to(#575555), color-stop(.5,#000000));
-background: -moz-linear-gradient(left, #575555 0%, #000000 50%, #575555 100%);
-font-family: 'Raleway', sans-serif;
+{/*
+  background-color: #352D2D;
+  background: -webkit-gradient(linear, left center, right center, from(#575555), to(#575555), color-stop(.5,#000000));
+  background: -moz-linear-gradient(left, #575555 0%, #000000 50%, #575555 100%);*/
+  background-image: url('/images/doge.jpeg');
+  background-size: 50px;
+  font-family: 'Raleway', sans-serif;
 }
 
 #avatar{
@@ -43,9 +45,26 @@ ul.tweetc
 ul.tweetc>li
 {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tweet
 {
   flex-basis: 100%;
+  background-color: #222;
+  color: white;
+  padding: 25px;
+  border-radius: 25px;
+}
+
+div.tweet img
+{
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.doge
+{
+  width: 50px;
 }
