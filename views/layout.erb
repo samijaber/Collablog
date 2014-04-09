@@ -20,8 +20,8 @@
 <% end %>
 <h1>
 DogeBarks
-</h1>
-	<%unless session[:info][:image].nil? or session[:info][:image].empty? %><img id="masterDoge" src="<%= session[:info][:image] %>"><% end %>
+</h1></a>
+	<%unless session[:info].nil? or session[:info][:image].nil? or session[:info][:image].empty? %><img id="avatar" src="<%= session[:info][:image] %>"><% end %>
 	<% unless flash[:message].nil? %>
         <div><%= flash[:message] %></div>
         <% end %>

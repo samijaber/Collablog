@@ -2,10 +2,12 @@ require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
+require 'sinatra-websocket'
 require 'omniauth-twitter'
 require 'net/http'
 require 'net/https'
 require 'twitter'
+require 'tweetstream'
 
 @@splash_path = '/'
 @@auth_path = '/auth/twitter'
@@ -19,6 +21,7 @@ configure do
   set :database, 'sqlite3:///db/db.sqlite3'
   set :port, 80
   set :bind, '0.0.0.0'
+  set :sockets, []
   use OmniAuth::Builder do
     provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
   end
@@ -45,7 +48,22 @@ get '/auth/failure' do
 end
 
 get '/' do
-  erb :splash
+  if !request.websocket?
+    erb :socket
+  else
+    request.websocket do |ws|
+      ws.onopen do
+        settings.sockets << ws
+      end
+      ws.onmessage do |msg|
+        EM.next_tick { settings.sockets.each{|s| s.send(msg) } }
+      end
+      ws.onclose do
+        warn("websocket closed")
+        settings.sockets.delete(ws)
+      end
+    end
+  end
 end
 
 get '/app' do
@@ -62,7 +80,7 @@ post '/blog/new' do
   redirect to(@@auth_path) unless current_user
   blog = Blog.new
   blog.title = params[:title]
-  blog.hashtag = params[:hashtag].gsub("#","")
+  blog.hashtag = "#" + params[:hashtag].gsub("#","")
   blog.screen_name = session[:info][:nickname]
   blog.save
   redirect to(@@blog_path+blog.id.to_s)
@@ -71,18 +89,20 @@ end
 get '/blog/:id' do
   redirect to(@@auth_path) unless current_user
   @blog = Blog.find params[:id]
-  #erb :blog_show
-  client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = ENV['CONSUMER_KEY']
-    config.consumer_secret     = ENV['CONSUMER_SECRET']
-    config.access_token        = session[:credentials][:token]
-    config.access_token_secret = session[:credentials][:secret]
-  end
   @permissions = @blog.permissions
   @tweets = []
-  @tweets += client.search("from:" + @blog.screen_name + " " + @blog.hashtag).take(100).to_a.select{|x| x.created_at >= @blog.created_at}
-  @permissions.each do |permission|
-    @tweets += client.search("from:" + permission.screen_name + " " + @blog.hashtag).take(100).to_a.select{|x| x.created_at >= @blog.created_at}
+  if @blog.updated_at < 1.mins.ago
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['CONSUMER_KEY']
+      config.consumer_secret     = ENV['CONSUMER_SECRET']
+      config.access_token        = session[:credentials][:token]
+      config.access_token_secret = session[:credentials][:secret]
+    end
+    @tweets += client.search("from:" + @blog.screen_name + " " + @blog.hashtag).take(100).to_a #.select{|x| x.created_at >= @blog.created_at}
+    @permissions.each do |permission|
+      @tweets += client.search("from:" + permission.screen_name + " " + @blog.hashtag).take(100).to_a #.select{|x| x.created_at >= @blog.created_at}
+    end
+  else
   end
   @tweets.sort_by!{|x| x.created_at}
   @tweets.reverse!
@@ -114,6 +134,10 @@ get '/blog/:id/deluser/:screenname' do
   redirect to(@@blog_path + params[:id])
 end
 
+get '/tokens' do
+  session[:credentials][:token] + " " + session[:credentials][:secret] + " " + ENV['CONSUMER_KEY'] + " " + ENV['CONSUMER_SECRET']
+end
+
 class Blog < ActiveRecord::Base
   has_and_belongs_to_many :saved_tweets
   has_many :permissions
@@ -125,4 +149,13 @@ end
 
 class Permission < ActiveRecord::Base
   belongs_to :blog
+end
+
+Thread.new do
+  sleep 5
+  settings.sockets.each{|socket| socket.send "connected"}
+  while true do 
+    sleep 3
+    settings.sockets.each{|socket| socket.send "tick"}
+  end
 end

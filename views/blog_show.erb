@@ -22,11 +22,11 @@
 <hr>
 <p><%= @blog.title %></p>
 <p><%= @blog.hashtag %></p>
-<ul>
+<ul class="tweetc">
 <% @tweets.each do |tweet| %>
 <li>
-<img class="avatar" src="<%= tweet.user.profile_image_uri %>">
-<a href="<%= tweet.uri %>"><%= tweet.text %> - <strong><%= tweet.user.screen_name %></strong></a>
+<div><img src="<%= tweet.user.profile_image_uri %>"><strong><%= tweet.user.screen_name %></strong></div>
+<div class="tweet"><a href="<%= tweet.uri %>"><%= tweet.text %></a></div>
 </li>
 <% end %>
 </ul>
