@@ -25,9 +25,12 @@
 <ul class="tweetc">
 <% @tweets.each do |tweet| %>
 <li>
-<div><img src="<%= tweet.user.profile_image_uri %>"><strong><%= tweet.user.screen_name %></strong></div>
-<div class="tweet"><a href="<%= tweet.uri %>"><%= tweet.text %></a></div>
-</li>
+<div><img src="<%= tweet.user.profile_image_uri %>"><strong><%= tweet.user.screen_name %></strong>
+</div>
+<div align="right" class="tweet"><%= tweet.text %><br> Created at <a href="<%= tweet.uri %>"><%= tweet.datetime %></a>
+</div>
+</li> 
+<hr>
 <% end %>
 </ul>
 <a href="<%= @@app_path %>">back</a>

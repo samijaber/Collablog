@@ -14,14 +14,16 @@
 
 <main>
 <% if current_user %>
-<a href="<%= @@app_path %>">
+<!-- <a href="<%= @@app_path %>">
 <% else %>
 <a>
-<% end %>
+<% end %> -->
 <h1>
+<img id="doge" src="images/public/doge.jpeg">
 DogeBarks
-</h1></a>
-	<%unless session[:info].nil? or session[:info][:image].nil? or session[:info][:image].empty? %><img id="avatar" src="<%= session[:info][:image] %>"><% end %>
+<img id="doge" src="images/public/doge.jpeg">
+</h1><!-- </a> -->
+	<%unless session[:info].nil? or session[:info][:image].nil? or session[:info][:image].empty? %><img id="avatar" align="right" src="<%= session[:info][:image] %>"><% end %>
 	<% unless flash[:message].nil? %>
         <div><%= flash[:message] %></div>
         <% end %>
