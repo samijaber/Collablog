@@ -26,8 +26,7 @@
 <ul class="tweetc">
 <% @tweets.each do |tweet| %>
 <li>
-<div style="text-align:center;"><img src="<%= tweet.user.profile_image_uri %>"><br><strong><%= tweet.user.screen_name %></strong> - <%= tweet.created_at.strftime("%A, %b %d") %>
-</div>
+<div style="text-align:center;"><a href="http://www.twitter.com/<%= tweet.user.screen_name %>"><img src="<%= tweet.user.profile_image_uri %>"><br><strong><%= tweet.user.screen_name %></strong> - <%= tweet.created_at.strftime("%A, %b %d") %></a></div>
 <a style="flex-basis:100%" href="<%= tweet.uri %>"><div class="tweet"><%= tweet.text %></div></a>
 <div style="text-align:right;flex-basis: 100%;"></div>
 </div>

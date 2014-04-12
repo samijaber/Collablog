@@ -14,11 +14,6 @@
 <body>
 
 <main>
-<% if current_user %>
-<!-- <a href="<%= @@app_path %>">
-<% else %>
-<a>
-<% end %> -->
 <h1>
 <img class="doge" src="/images/doge.jpeg">
 DogeBarks
@@ -44,4 +39,7 @@ for(var i = 0; i < tweets.length; i++)
   tweets[i].innerHTML = imgify(tweets[i].innerText);
 }
 </script>
+<footer>
+made with love by <a href="http://github.com/samijaber">@samjabz</a> and <a href="http://github.com/tlwr">@tlwr</a>
+</footer>
 </html>
