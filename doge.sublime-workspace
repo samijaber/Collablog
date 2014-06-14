@@ -1,0 +1,543 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"col",
+				"column"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"color",
+				"border-color"
+			],
+			[
+				"colo",
+				"outline-color"
+			],
+			[
+				"h",
+				"line-height"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"BACK",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"margin-",
+				"margin-top"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"results",
+				"getResults"
+			],
+			[
+				"forma",
+				"formatCardDate"
+			],
+			[
+				"upda",
+				"updateCard2"
+			],
+			[
+				"update",
+				"updateCard1"
+			],
+			[
+				"heat",
+				"heatmap_JSON"
+			],
+			[
+				"data",
+				"data_JSONED"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"tick",
+				"tickMarks"
+			],
+			[
+				"off",
+				"offset2"
+			],
+			[
+				"dllr",
+				"dllr1"
+			],
+			[
+				"find",
+				"find"
+			],
+			[
+				"with",
+				"withConnection"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "dogebarks/src/main/scala/com/dogebarks/app/DogeServlet.scala",
+			"settings":
+			{
+				"buffer_size": 285,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "site.rb",
+			"settings":
+			{
+				"buffer_size": 4208,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 203.0,
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 457.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/samijaber/Documents/Code/samijaber/index.html",
+		"/Users/samijaber/Documents/Code/CodeJam2013/public/javascripts/vendor/nvd3/README.md",
+		"/Users/samijaber/Desktop/COSTS",
+		"/Users/samijaber/Documents/Code/samijaber/icons/twitter.svg",
+		"/Users/samijaber/Documents/Code/samijaber/icons/linkedin.svg",
+		"/Users/samijaber/Documents/Code/samijaber/icons/github.svg",
+		"/Users/samijaber/Documents/Code/samijaber/icons/email.svg",
+		"/Users/samijaber/Documents/Code/samijaber/icons/elegant_font.zip",
+		"/Users/samijaber/Desktop/Amazon - Cultural Vistas/Amazon questions",
+		"/Users/samijaber/Documents/Code/samijaber/style.css",
+		"/Users/samijaber/Desktop/Amazon positions",
+		"/Users/samijaber/Documents/Code/samijaber/soon/index.html",
+		"/Users/samijaber/Documents/Code/samijaber/soon.html",
+		"/Users/samijaber/Documents/Code/samijaber/blog/_site/index.html",
+		"/Users/samijaber/Documents/Code/samijaber/robots.txt",
+		"/Users/samijaber/Documents/Code/samijaber/blog/_layouts/post.html",
+		"/Users/samijaber/Documents/Code/samijaber/blog/_layouts/default.html",
+		"/Users/samijaber/Documents/Code/samijaber/blog/_posts/2013-12-24-welcome-to-jekyll.markdown",
+		"/Users/samijaber/Documents/Code/samijaber/samijaber.sublime-project",
+		"/Users/samijaber/Documents/Code/samijaber/blog/.gitignore",
+		"/Users/samijaber/Documents/Code/MathGenius/mathgenius.js",
+		"/Users/samijaber/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/samijaber/Documents/Code/samijaber/style-old.css",
+		"/Users/samijaber/Documents/Code/samijaber/style",
+		"/Users/samijaber/Documents/Code/chart-wizard/index.html",
+		"/Users/samijaber/Documents/Code/chart-wizard/chartwizard.css",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/table.csv",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/parser.py",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/nozeroes.csv",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/starting table.csv",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/final table.csv",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/splitFile.py",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/zips/parser2.py",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/zips.csv",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/table",
+		"/Users/samijaber/Desktop/THINGS TO LEARN",
+		"/Users/samijaber/Documents/Code/McHacksCounter/background.js",
+		"/Users/samijaber/Documents/Code/McHacksCounter/manifest.json",
+		"/Users/samijaber/Desktop/TODO:",
+		"/Users/samijaber/Desktop/COMP310 FINAL EXAM:",
+		"/Users/samijaber/Dropbox/Fall 2013/MATH552 - Combinatorial Optimization/562889xgkfqw/main.tex",
+		"/Users/samijaber/Desktop/test.java",
+		"/Users/samijaber/Desktop/LaTex Template.tex",
+		"/Users/samijaber/Desktop/temp_310/server.c",
+		"/Users/samijaber/Desktop/temp_310/client.c",
+		"/Users/samijaber/Downloads/niftytelnet-1.1-ssh-r3.cpt",
+		"/Users/samijaber/.ssh/known_hosts",
+		"/Users/samijaber/Documents/Code/jazeeraScraper/scrapy.cfg",
+		"/Users/samijaber/Dropbox/Academia/Old Courses/Winter 2013/MATH255 - Analysis II/Assignments/Homework 3/Analysis HW3.tex",
+		"/Users/samijaber/Documents/Code/chart-wizard/linechart.html",
+		"/Users/samijaber/Documents/Code/chart-wizard/fullPage/example.html",
+		"/Users/samijaber/Documents/Code/chart-wizard/linechart.js",
+		"/Users/samijaber/Documents/Code/chart-wizard/mf-src/meatflap.js",
+		"/Users/samijaber/Documents/Code/chart-wizard/homepage.css",
+		"/Users/samijaber/Documents/Code/chart-wizard/topbar.js",
+		"/Users/samijaber/Documents/Code/chart-wizard/graph2.js",
+		"/Users/samijaber/Documents/Code/chart-wizard/graph3.js",
+		"/Users/samijaber/Documents/Code/chart-wizard/novus-nvd3-764767a/src/models/lineChart.js",
+		"/Users/samijaber/Documents/Code/chart-wizard/heatmap_sample.json",
+		"/Users/samijaber/Documents/Code/chart-wizard/data.json",
+		"/Users/samijaber/Documents/Code/novus-nvd3-764767a/examples/lineChart.html",
+		"/Users/samijaber/Documents/Code/novus-nvd3-764767a/nv.d3.js",
+		"/Users/samijaber/Documents/Code/novus-nvd3-764767a/src/models/lineChart.js",
+		"/Users/samijaber/Documents/Code/novus-nvd3-764767a/deprecated/charts/cumulativeLineChart.js",
+		"/Users/samijaber/Documents/Code/novus-nvd3-764767a/examples/stream_layers.js",
+		"/Users/samijaber/Documents/Code/novus-nvd3-764767a/examples/crossfilter.html",
+		"/Users/samijaber/Documents/Code/novus-nvd3-764767a/examples/crossfilterWithDimentions.html",
+		"/Users/samijaber/Documents/Code/novus-nvd3-764767a/examples/crossfilterWithTables.html",
+		"/Users/samijaber/Desktop/24h Hackathon",
+		"/Users/samijaber/Desktop/independent audio control for each app in Mac. Pos",
+		"/Users/samijaber/Documents/yhack/MathGenius/THEFUNCTION.js",
+		"/Users/samijaber/Documents/yhack/MathGenius/mathgenius.js",
+		"/Users/samijaber/Documents/yhack/MathGenius/server/bootstrap.js",
+		"/Users/samijaber/Documents/yhack/MathGenius/packages/wolfram/package.js",
+		"/Users/samijaber/Documents/yhack/MathGenius/routes.js",
+		"/Users/samijaber/Documents/yhack/MathGenius/wolframaaa.js",
+		"/Users/samijaber/Documents/yhack/MathGenius/templates/proposition.html",
+		"/Users/samijaber/Documents/yhack/MathGenius/annotate.js",
+		"/Users/samijaber/Documents/yhack/MathGenius/templates/topics.html",
+		"/Users/samijaber/Documents/yhack/MathGenius/templates/section.html",
+		"/Users/samijaber/Documents/yhack/MathGenius/templates/definition.html",
+		"/Users/samijaber/Documents/yhack/MathGenius/.gitignore",
+		"/Users/samijaber/Documents/yhack/leaderboard/leaderboard.js",
+		"/Users/samijaber/Documents/yhack/leaderboard/leaderboard.html",
+		"/Users/samijaber/Documents/Code/todolist/app/controllers/Application.scala",
+		"/Users/samijaber/Documents/Code/todolist/app/models/Task.scala",
+		"/Users/samijaber/Documents/Code/todolist/conf/evolutions/1.sql",
+		"/Users/samijaber/Documents/Code/todolist/conf/application.conf",
+		"/Users/samijaber/Documents/Code/todolist/app/views/index.scala.html",
+		"/Users/samijaber/Documents/Code/todolist/app/views/main.scala.html",
+		"/Users/samijaber/Documents/Code/todolist/build.sbt",
+		"/Users/samijaber/Desktop/mac app idea",
+		"/Users/samijaber/Documents/Code/todolist/conf/routes",
+		"/Users/samijaber/boottest/app.js",
+		"/Users/samijaber/Desktop/money"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/samijaber/Documents/Code/chart-wizard",
+			"",
+			"/Users/samijaber/Documents/Code/novus-nvd3-764767a/",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"max",
+			"15px",
+			"	line-height: 10px;\n",
+			"\n		",
+			"white",
+			"box",
+			"email: ",
+			"href",
+			"masthead",
+			"text",
+			"34058",
+			"Test",
+			"graph1.js",
+			"linechart.js",
+			"infopage",
+			"tickMar",
+			"tickMack",
+			"tickMarks",
+			"chart2",
+			"arr2",
+			"yaxis",
+			"ui shape",
+			"2013",
+			"chart1",
+			"chart",
+			"1\"",
+			"iso",
+			"rn",
+			"linechart.js",
+			")), y",
+			"iso(n",
+			"iso",
+			"new Date(2013, 11, 09, 08, 00, 00, 00)), y: 14369.872});\narr.push({x: iso(new Date(2013, 11, 09, 08, 15, 00, 00)), y: 14425.662});\narr.push({x: iso(new Date(2013, 11, 09, 08, 30, 00, 00)), y: 14467.903});\narr.push({x: iso(new Date(2013, 11, 09, 08, 45, 00, 00)), y: 14563.201});\narr.push({x: iso(new Date(2013, 11, 09, 09, 00, 00, 00)), y: 14780.018});\narr.push({x: iso(new Date(2013, 11, 09, 09, 15, 00, 00)), y: 14758.391});\narr.push({x: iso(new Date(2013, 11, 09, 09, 30, 00, 00)), y: 14759.164});\narr.push({x: iso(new Date(2013, 11, 09, 09, 45, 00, 00)), y: 14866.025});\narr.push({x: iso(new Date(2013, 11, 09, 10, 00, 00, 00)), y: 15173.152});\narr.push({x: iso(new Date(2013, 11, 09, 10, 15, 00, 00)), y: 15218.152});\narr.push({x: iso(new Date(2013, 11, 09, 10, 30, 00, 00)), y: 15248.415});\narr.push({x: iso(new Date(2013, 11, 09, 10, 45, 00, 00)), y: 15310.935});\narr.push({x: iso(new Date(2013, 11, 09, 11, 00, 00, 00)), y: 15529.061});\narr.push({x: iso(new Date(2013, 11, 09, 11, 15, 00, 00)), y: 15641.979});\narr.push({x: iso(new Date(2013, 11, 09, 11, 30, 00, 00)), y: 15598.05});\narr.push({x: iso(new Date(2013, 11, 09, 11, 45, 00, 00)), y: 15753.887});\narr.push({x: iso(new Date(2013, 11, 09, 12, 00, 00, 00)), y: 15777.439});\narr.push({x: iso(new Date(2013, 11, 09, 12, 15, 00, 00)), y: 15801.726});\narr.push({x: iso(new Date(2013, 11, 09, 12, 30, 00, 00)), y: 15856.039});\narr.push({x: iso(new Date(2013, 11, 09, 12, 45, 00, 00)), y: 15815.965});\narr.push({x: iso(new Date(2013, 11, 09, 13, 00, 00, 00)), y: 15824.856});\narr.push({x: iso(new Date(2013, 11, 09, 13, 15, 00, 00)), y: 15764.931});\narr.push({x: iso(new Date(2013, 11, 09, 13, 30, 00, 00)), y: 15743.37});\narr.push({x: iso(new Date(2013, 11, 09, 13, 45, 00, 00)), y: 15800.409});\narr.push({x: iso(new Date(2013, 11, 09, 14, 00, 00, 00)), y: 15788.381});\narr.push({x: iso(new Date(2013, 11, 09, 14, 15, 00, 00)), y: 15678.741});\narr.push({x: iso(new Date(2013, 11, 09, 14, 30, 00, 00)), y: 15677.23});\narr.push({x: iso(new Date(2013, 11, 09, 14, 45, 00, 00)), y: 15817.903});\narr.push({x: iso(new Date(2013, 11, 09, 15, 00, 00, 00)), y: 15888.88});\narr.push({x: iso(new Date(2013, 11, 09, 15, 15, 00, 00)), y: 15845.501});\narr.push({x: iso(new Date(2013, 11, 09, 15, 30, 00, 00)), y: 15926.713});\narr.push({x: iso(new Date(2013, 11, 09, 15, 45, 00, 00)), y: 15922.235});\narr.push({x: iso(new Date(2013, 11, 09, 16, 00, 00, 00)), y: 15684.123});\narr.push({x: iso(new Date(2013, 11, 09, 16, 15, 00, 00)), y: 15657.75});\narr.push({x: iso(new Date(2013, 11, 09, 16, 30, 00, 00)), y: 15808.328});\narr.push({x: iso(new Date(2013, 11, 09, 16, 45, 00, 00)), y: 15922.424});\narr.push({x: iso(new Date(2013, 11, 09, 17, 00, 00, 00)), y: 15771.909});\narr.push({x: iso(new Date(2013, 11, 09, 17, 15, 00, 00)), y: 15758.857});\narr.push({x: iso(new Date(2013, 11, 09, 17, 30, 00, 00)), y: 15634.568});\narr.push({x: iso(new Date(2013, 11, 09, 17, 45, 00, 00)), y: 15613.649});\narr.push({x: iso(new Date(2013, 11, 09, 18, 00, 00, 00)), y: 15208.584});\narr.push({x: iso(new Date(2013, 11, 09, 18, 15, 00, 00)), y: 15273.769});\narr.push({x: iso(new Date(2013, 11, 09, 18, 30, 00, 00)), y: 15267.812});\narr.push({x: iso(new Date(2013, 11, 09, 18, 45, 00, 00)), y: 15215.534});\narr.push({x: iso(new Date(2013, 11, 09, 19, 00, 00, 00)), y: 15214.557});\narr.push({x: iso(new Date(2013, 11, 09, 19, 15, 00, 00)), y: 15198.033});\narr.push({x: iso(new Date(2013, 11, 09, 19, 30, 00, 00)), y: 15159.63});\narr.push({x: iso(new Date(2013, 11, 09, 19, 45, 00, 00)), y: 15125.667});\narr.push({x: iso(new Date(2013, 11, 09, 20, 00, 00, 00)), y: 15028.004});\narr.push({x: iso(new Date(2013, 11, 09, 20, 15, 00, 00)), y: 14970.92});\narr.push({x: iso(new Date(2013, 11, 09, 20, 30, 00, 00)), y: 14919.566});\narr.push({x: iso(new Date(2013, 11, 09, 20, 45, 00, 00)), y: 14923.107});\narr.push({x: iso(new Date(2013, 11, 09, 21, 00, 00, 00)), y: 14782.877});\narr.push({x: iso(new Date(2013, 11, 09, 21, 15, 00, 00)), y: 14719.747});\narr.push({x: iso(new Date(2013, 11, 09, 21, 30, 00, 00)), y: 14709.362});\narr.push({x: iso(new Date(2013, 11, 09, 21, 45, 00, 00)), y: 14747.927});\narr.push({x: iso(new Date(2013, 11, 09, 22, 00, 00, 00)), y: 14573.228});\narr.push({x: iso(new Date(2013, 11, 09, 22, 15, 00, 00)), y: 14442.517});\narr.push({x: iso(new Date(2013, 11, 09, 22, 30, 00, 00)), y: 14424.157});\narr.push({x: iso(new Date(2013, 11, 09, 22, 45, 00, 00)), y: 14389.285});\narr.push({x: iso(new Date(2013, 11, 09, 23, 00, 00, 00)), y: 14408.623});\narr.push({x: iso(new Date(2013, 11, 09, 23, 15, 00, 00)), y: 14458.237});\narr.push({x: iso(new Date(2013, 11, 09, 23, 30, 00, 00)), y: 14401.343});\narr.push({x: iso(new ",
+			"new",
+			"models",
+			"xAxis =",
+			"xAxis",
+			"tickformat",
+			"linechart.js",
+			"tickformat",
+			"})",
+			"14390",
+			"sinAndCos",
+			"sinandcos",
+			"lib",
+			"stream_layers.js",
+			"stream_l",
+			"extend",
+			"subscriÒbe",
+			"')",
+			"') ",
+			"'),"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"), y",
+			"n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "dogebarks/src/main/scala/com/dogebarks/app/DogeServlet.scala",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "site.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4208,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 201.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "doge.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 187.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

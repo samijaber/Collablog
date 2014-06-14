@@ -3,15 +3,17 @@ package com.dogebarks.app
 import org.scalatra._
 import scalate.ScalateSupport
 
-class DogeServlet extends DogebarksStack {
+class DogeServlet extends DogebarksStack with ScalateSupport {
 
   get("/") {
-    <html>
-      <body>
-        <h1>Hello, world!</h1>
-        Say <a href="hello-scalate">hello to Scalate</a>.
-      </body>
-    </html>
+  	contentType="text/html"
+
+  	layoutTemplate("/WEB-INF/templates/views/index.ssp")
   }
+
+
+object Helpers {
+  def current_user() = true;
+}
   
 }
