@@ -1,14 +1,9 @@
-<%@ var user: User %>
-<p>Hi ${user.name},</p>
-#for (i <- 1 to 3)
-<p>${i}</p>
-#end
-<p>See, I can count!</p>
+<!doctype html>
+<html>
 
+<body>
+	Welcome to DogeBarks.
+	<a href="/auth">log in</a>
+</body>
 
-<% import Helpers._  %>
-#if ${current_user()}
-<a href="<%= @@app_path %>">go to app</a>
-#else
-<a href="<%= @@auth_path %>">log in</a>
-#end
+</html>
