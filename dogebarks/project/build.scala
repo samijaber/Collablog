@@ -22,6 +22,9 @@ object DogebarksBuild extends Build {
       scalaVersion := ScalaVersion,
       resolvers += Classpaths.typesafeReleases,
       libraryDependencies ++= Seq(
+        //Added dependencies
+        "org.scribe" % "scribe" % "1.3.5",
+        //Default Dependencies
         "org.scalatra" %% "scalatra" % ScalatraVersion,
         "org.scalatra" %% "scalatra-scalate" % ScalatraVersion,
         "org.scalatra" %% "scalatra-specs2" % ScalatraVersion % "test",
