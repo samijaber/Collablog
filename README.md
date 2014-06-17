@@ -1,5 +1,6 @@
 Collaborate. Blog. Collablog.
 
-to run:
+to run (inside dogebarks/):
 
-`CONSUMER_KEY=<your consumer key> CONSUMER_SECRET=<your consumer secret> ruby site.rb`
+$ API_KEY=<twitter key> CONSUMER_SECRET=<twitter consumer secret> ./sbt
+> container:start
