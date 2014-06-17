@@ -2,5 +2,5 @@ Collaborate. Blog. Collablog.
 
 to run (inside dogebarks/):
 
-$ API_KEY=<twitter key> CONSUMER_SECRET=<twitter consumer secret> ./sbt
+$ API_KEY=<twitter key> API_SECRET=<twitter secret> ./sbt
 > container:start
