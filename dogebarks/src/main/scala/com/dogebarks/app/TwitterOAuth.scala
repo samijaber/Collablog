@@ -8,12 +8,13 @@ import org.scribe.model._
 import xml.{XML, NodeSeq}
 
 object TwitterOAuth {
+
 	def service : OAuthService= new ServiceBuilder()
-					.provider(classOf[TwitterApi])
+					.provider(classOf[TwitterApi.SSL])
 					//provide secrets when launching server
 					.apiKey(Secret.apiKey)
 					.apiSecret(Secret.apiSecret)
-					// .callback(Secret.authCallback)
+					.callback("http://0.0.0.0:8080/auth/callback")
 					.build();
 
 	def requestToken(): Token = service.getRequestToken
