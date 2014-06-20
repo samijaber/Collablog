@@ -16,6 +16,13 @@ object Helpers {
 	def current_user() = true;
 }
 
+def callAPI(url: String) = {
+	val req = new OAuthRequest(Verb.GET, url)
+	TwitterOAuth.service.signRequest(accTkn, req)
+	val resp = req.send()
+	resp.getBody()
+}
+
 var accTkn: Token = _;
 
 get("/") {
@@ -32,14 +39,15 @@ get("/auth") {
 get("/auth/callback") {
 	val requestToken: Token = new Token(params("oauth_token"), Secret.apiSecret)
 	accTkn = TwitterOAuth.getAccessToken(requestToken, params("oauth_verifier"))
+
+	val respBody = callAPI("https://api.twitter.com/1.1/account/verify_credentials.json")
+	// respBody
 	redirect("/")
 }
 
 get("/blog") {
-	val req = new OAuthRequest(Verb.GET, "https://api.twitter.com/1.1/statuses/user_timeline.json")
-	TwitterOAuth.service.signRequest(accTkn, req)
-	val resp = req.send()
-	resp.getBody()
+	val respBody = callAPI("https://api.twitter.com/1.1/statuses/user_timeline.json")
+	respBody
 }
 
 }
