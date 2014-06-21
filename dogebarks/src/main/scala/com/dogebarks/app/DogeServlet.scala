@@ -2,6 +2,7 @@ package com.dogebarks.app
 
 import org.scalatra._
 import scalate.ScalateSupport
+import scala.util.parsing.json._
 
 import org.scribe.builder.api.TwitterApi
 import org.scribe.builder.ServiceBuilder
@@ -47,7 +48,16 @@ get("/auth/callback") {
 
 get("/blog") {
 	val respBody = callAPI("https://api.twitter.com/1.1/statuses/user_timeline.json")
-	respBody
+	var parsedList: Option[Any] = JSON.parseFull(respBody)
+	parsedList match  {
+		case l: List[Map[String, Any]] => 
+			var parsedBody:Map[String, Any] = l.head
+			parsedBody.foreach {case(k, v) => if (k == "text") v }
+	}
+	
+	// for( x <- parsedBody) {
+	// 	x
+	// }
 }
 
 }
