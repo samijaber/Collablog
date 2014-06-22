@@ -48,16 +48,17 @@ get("/auth/callback") {
 
 get("/blog") {
 	val respBody = callAPI("https://api.twitter.com/1.1/statuses/user_timeline.json")
-	var parsedList: Option[Any] = JSON.parseFull(respBody)
-	parsedList match  {
-		case l: List[Map[String, Any]] => 
-			var parsedBody:Map[String, Any] = l.head
-			parsedBody.foreach {case(k, v) => if (k == "text") v }
+	JSON.parseFull(respBody) match  {
+		case Some(l:List[Map[String,Any]]) => printTweets(l)
+		case _ => "Error occured. JSON not parsed correctly"
 	}
-	
-	// for( x <- parsedBody) {
-	// 	x
-	// }
+}
+
+def printTweets(tweets:List[Map[String, Any]]): List[Any] = {
+	tweets match {
+		case tweet :: ts => tweet("text") :: printTweets(ts)
+		case Nil => Nil
+	}
 }
 
 }
