@@ -18,19 +18,12 @@ var accTkn: Token = _;
 object Helpers {
 	def current_user() = {
 		try { 
-			val respBody = callAPI("https://api.twitter.com/1.1/account/verify_credentials.json")
+			val respBody = TwitterOAuth.get("https://api.twitter.com/1.1/account/verify_credentials.json", accTkn)
 			true
 		} catch {
 		  case e: Exception => false
 		}
 	}
-}
-
-def callAPI(url: String) = {
-	val req = new OAuthRequest(Verb.GET, url)
-	TwitterOAuth.service.signRequest(accTkn, req)
-	val resp = req.send()
-	resp.getBody()
 }
 
 //TODO: Add login page
@@ -64,11 +57,15 @@ get("/auth/callback") {
 }
 
 get("/blog") {
-	val respBody = callAPI("https://api.twitter.com/1.1/statuses/user_timeline.json")
+	val respBody = TwitterOAuth.get("https://api.twitter.com/1.1/statuses/user_timeline.json", accTkn)
 	JSON.parseFull(respBody) match  {
 		case Some(l:List[Map[String,Any]]) => printTweets(l)
 		case _ => "Error occured. JSON not parsed correctly"
 	}
+}
+
+get("/home") {
+	homeTimeline(accTkn)
 }
 
 def printTweets(tweets:List[Map[String, Any]]): List[Any] = {
@@ -76,6 +73,12 @@ def printTweets(tweets:List[Map[String, Any]]): List[Any] = {
 		case tweet :: ts => tweet("text") :: printTweets(ts)
 		case Nil => Nil
 	}
+}
+
+def homeTimeline(accessToken: Token): List[Map[String,Any]]  = {
+    val response: String = TwitterOAuth.get("https://api.twitter.com/1.1/statuses/home_timeline.json", accessToken)
+    val statusesO = JSON.parseFull(response)
+    statusesO.get.asInstanceOf[List[Map[String,Any]]]
 }
 
 }

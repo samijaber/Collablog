@@ -7,6 +7,8 @@ import org.scribe.model._
 
 import xml.{XML, NodeSeq}
 
+class UnauthorizedException extends RuntimeException
+
 object TwitterOAuth {
 
 	def service : OAuthService= new ServiceBuilder()
@@ -15,33 +17,26 @@ object TwitterOAuth {
 					.apiKey(Secret.apiKey)
 					.apiSecret(Secret.apiSecret)
 					.callback("http://0.0.0.0:8080/auth/callback")
-					.build();
+					.build
 
 	def requestToken(): Token = service.getRequestToken
 
 	def getAuthUrl(requestToken: Token): String = service.getAuthorizationUrl(requestToken)
 
 	def getAccessToken(requestToken: Token, verifierCode: String): Token = {
-		val verifier: Verifier = new Verifier(verifierCode);
-		service.getAccessToken(requestToken, verifier);
+		val verifier: Verifier = new Verifier(verifierCode)
+		service.getAccessToken(requestToken, verifier)
 	}
 
 	def request(verb: Verb, url: String, accessToken: Token): String = {
 		val request: OAuthRequest = new OAuthRequest(verb, url)
 		service.signRequest(accessToken, request)
 		val response: Response = request.send
-		if (response.getCode == 401) throw new Exception
+		if (response.getCode == 401) throw new UnauthorizedException
 		response.getBody
 	}
 
-	def authenticate(url: String, accessToken: Token): String = {
+	def get(url: String, accessToken: Token): String = {
 		request(Verb.GET, url, accessToken)
-	}
-
-	def homeTimeline(accessToken: Token): NodeSeq = {
-			val url = "//choose proper URL"
-	  	val response: String = authenticate(url, accessToken)
-	  	val statuses = XML.loadString(response)
-	  	statuses \ "status"
 	}
 }
