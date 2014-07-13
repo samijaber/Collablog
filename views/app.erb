@@ -1,9 +1,0 @@
-<% if current_user %><p><a href="<%= @@new_blog_path %>">new blog</a><% end %>
-<p>Listing <%= @blogs.length %> blog<%= @blogs.length!=1?"s":""%>:</p>
-<ul>
-<% @blogs.each do |blog| %>
-  <li><a href="<%= @@blog_path + blog.id.to_s %>"><%= blog.title %> using <%= blog.hashtag %></a></li>
-<% end %>
-</ul>
-
-<div><%= session[:det] %></div>

@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"acc",
+				"accTkn"
+			],
+			[
+				"parse",
+				"parsedBody"
+			],
+			[
+				"for",
+				"for	for - Block"
+			],
+			[
+				"resp",
+				"respBody"
+			],
+			[
+				"call",
+				"callAPI"
+			],
+			[
+				"twittero",
+				"TwitterOAuth"
+			],
+			[
+				"requ",
+				"requestToken"
+			],
+			[
+				"auth",
+				"authCallback"
+			],
+			[
+				"cons",
+				"consumerSecret"
+			],
+			[
+				"ss",
+				"ssp"
+			],
+			[
+				"Scala",
+				"ScalateSupport"
+			],
+			[
 				"marg",
 				"margin"
 			],
@@ -124,10 +168,6 @@
 				"data_JSONED"
 			],
 			[
-				"for",
-				"for	for (…) {…}"
-			],
-			[
 				"tick",
 				"tickMarks"
 			],
@@ -155,7 +195,39 @@
 			"file": "dogebarks/src/main/scala/com/dogebarks/app/DogeServlet.scala",
 			"settings":
 			{
-				"buffer_size": 285,
+				"buffer_size": 1914,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dogebarks/src/main/webapp/WEB-INF/templates/views/index.ssp",
+			"settings":
+			{
+				"buffer_size": 99,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dogebarks/src/main/scala/com/dogebarks/app/TwitterOAuth.scala",
+			"settings":
+			{
+				"buffer_size": 1258,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dogebarks/src/main/webapp/WEB-INF/templates/layouts/default.ssp",
+			"settings":
+			{
+				"buffer_size": 1066,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dogebarks/project/build.scala",
+			"settings":
+			{
+				"buffer_size": 1934,
 				"line_ending": "Unix"
 			}
 		},
@@ -171,12 +243,24 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 203.0,
+		"height": 400.0,
 		"selected_items":
 		[
 			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"refres",
+				"Project: Refresh Folders"
+			],
+			[
 				"instal",
 				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
 			],
 			[
 				"ins",
@@ -212,6 +296,40 @@
 	},
 	"file_history":
 	[
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/scala/com/dogebarks/app/TwitterOAuth.scala",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/project/build.properties",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/scala/ScalatraBootstrap.scala",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/project/build.scala",
+		"/Users/samijaber/Documents/Code/Collablog/doge.sublime-project",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/.gitignore",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/webapp/WEB-INF/web.xml",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/webapp/WEB-INF/templates/views/index.ssp",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/webapp/WEB-INF/templates/views/auth.ssp",
+		"/Users/samijaber/Documents/Code/Collablog/db/migrate/20140407143249_create_saved_tweet.rb",
+		"/Users/samijaber/Documents/Code/Collablog/site.rb",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/target/scala-2.10/src_managed/main/scalate/templates/layouts/default_jade.scala",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/target/scala-2.10/src_managed/main/scalate/templates/views/hello-scalate_jade.scala",
+		"/Users/samijaber/Documents/Code/Collablog/public/layout.css",
+		"/Users/samijaber/Documents/Code/Collablog/db/schema.rb",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/target/scala-2.10/src_managed/main/scalate/templates/layouts/layout_ssp.scala",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/scala/com/dogebarks/app/Secret.scala",
+		"/Users/samijaber/Library/Application Support/Sublime Text 3/Packages/User/Scala.sublime-settings",
+		"/Users/samijaber/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/samijaber/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/webapp/WEB-INF/templates/layouts/default.ssp",
+		"/Users/samijaber/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/samijaber/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/samijaber/Documents/Code/Collablog/views/layout.erb",
+		"/Users/samijaber/Documents/Code/Collablog/views/splash.erb",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/webapp/public/layout.css",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/webapp/WEB-INF/templates/layouts/default_x.jade",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/webapp/WEB-INF/templates/layouts/layout.css",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/scala/com/dogebarks/app/DogeServlet.scala",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/webapp/WEB-INF/templates/layouts/layout.ssp.html",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/src/main/webapp/WEB-INF/templates/layouts/default.jade",
+		"/Users/samijaber/Documents/Code/Collablog/foundation-5.2.2/index.html",
+		"/Users/samijaber/Documents/Code/Collablog/foundation-5.2.2/humans.txt",
+		"/Users/samijaber/Documents/Code/Collablog/dogebarks/index.ssp",
 		"/Users/samijaber/Documents/Code/samijaber/index.html",
 		"/Users/samijaber/Documents/Code/CodeJam2013/public/javascripts/vendor/nvd3/README.md",
 		"/Users/samijaber/Desktop/COSTS",
@@ -233,7 +351,6 @@
 		"/Users/samijaber/Documents/Code/samijaber/samijaber.sublime-project",
 		"/Users/samijaber/Documents/Code/samijaber/blog/.gitignore",
 		"/Users/samijaber/Documents/Code/MathGenius/mathgenius.js",
-		"/Users/samijaber/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/samijaber/Documents/Code/samijaber/style-old.css",
 		"/Users/samijaber/Documents/Code/samijaber/style",
 		"/Users/samijaber/Documents/Code/chart-wizard/index.html",
@@ -310,13 +427,16 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/samijaber/Documents/Code/Collablog",
+			"/Users/samijaber/Documents/Code/Collablog/public",
+			"/Users/samijaber/Documents/Code/Collablog",
 			"/Users/samijaber/Documents/Code/chart-wizard",
 			"",
 			"/Users/samijaber/Documents/Code/novus-nvd3-764767a/",
@@ -328,6 +448,34 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"text ->",
+			"Map\\(Coordin",
+			"map(coor",
+			"Map(coor",
+			",",
+			"session",
+			"/failu",
+			".port",
+			"portkey",
+			"8080",
+			"port",
+			"bootstrap",
+			"4",
+			"indent",
+			"indent	",
+			"get",
+			"GET",
+			"get",
+			"GET",
+			"authenticate",
+			"GET",
+			"get",
+			"delete",
+			"libraryDependencies",
+			"omniauth",
+			"welcome to scalate",
+			"current_user",
+			"go to app",
 			"max",
 			"15px",
 			"	line-height: 10px;\n",
@@ -384,9 +532,16 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"\\nMap\\(coordin",
+			"\\nMap(coor",
+			"\\n,",
+			" \\n ,",
+			"\\n ,",
+			"\\r,",
+			"\\n,",
 			"), y",
 			"n"
 		],
@@ -399,7 +554,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -408,20 +563,79 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 285,
+						"buffer_size": 1914,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1428,
+								1428
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Scala/Scala.tmLanguage"
+							"syntax": "Packages/Scala/Scala.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 473.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "dogebarks/src/main/webapp/WEB-INF/templates/views/index.ssp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 99,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								53,
+								53
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "dogebarks/src/main/scala/com/dogebarks/app/TwitterOAuth.scala",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1258,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								702,
+								702
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -431,7 +645,65 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 3,
+					"file": "dogebarks/src/main/webapp/WEB-INF/templates/layouts/default.ssp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1066,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								472,
+								476
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "dogebarks/project/build.scala",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1934,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								795,
+								795
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "site.rb",
 					"semi_transient": false,
 					"settings":
@@ -443,8 +715,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								665,
+								665
 							]
 						],
 						"settings":
@@ -454,10 +726,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 201.0,
+						"translation.y": 1666.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -465,7 +737,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 38.0
 	},
 	"input":
 	{
@@ -501,7 +773,7 @@
 	"project": "doge.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -509,6 +781,26 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"twi",
+				"dogebarks/src/main/scala/com/dogebarks/app/TwitterOAuth.scala"
+			],
+			[
+				"build",
+				"dogebarks/project/build.scala"
+			],
+			[
+				".scala",
+				"dogebarks/src/main/scala/ScalatraBootstrap.scala"
+			],
+			[
+				"site",
+				"site.rb"
+			],
+			[
+				"layout.ssp",
+				"dogebarks/src/main/webapp/WEB-INF/templates/layouts/default.ssp"
+			]
 		],
 		"width": 0.0
 	},
@@ -517,16 +809,24 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"~/Documents/Code/samijaber/samijaber.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 400.0,
 		"selected_items":
 		[
+			[
+				"layout",
+				"$_scalate_$layout_ssp"
+			]
 		],
-		"width": 0.0
+		"width": 400.0
 	},
 	"settings":
 	{
@@ -534,8 +834,8 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 187.0,
+	"side_bar_visible": false,
+	"side_bar_width": 162.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
