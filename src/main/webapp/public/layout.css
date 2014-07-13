@@ -1,0 +1,87 @@
+body,html
+{/*
+  background-color: #352D2D;
+  background: -webkit-gradient(linear, left center, right center, from(#575555), to(#575555), color-stop(.5,#000000));
+  background: -moz-linear-gradient(left, #575555 0%, #000000 50%, #575555 100%);*/
+  background-image: url('images/doge.jpeg');
+  background-size: 50px;
+  /*font-family: 'Comic Neue';*/
+  text-align: center;
+}
+
+#avatar{
+	display: block;
+        margin-left: auto;
+        margin-right: auto;
+	width: 50px;
+}
+
+h1 {
+	font-size: 25px;
+	text-align: center;
+}
+
+main
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 70%;
+  max-width: 800px;
+  min-width: 290px;
+  padding: 25px;
+  box-sizing: border-box;
+  border: 1px solid #dfdfdf;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.94);
+}
+
+ul.tweetc
+{
+  list-style: none;
+}
+
+ul.tweetc>li
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tweet
+{
+  flex-basis: 100%;
+  background-color: #222;
+  color: white;
+  padding: 25px;
+  border-radius: 25px;
+}
+
+div.tweet img
+{
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.doge
+{
+  width: 50px;
+}
+
+footer
+{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 12px;
+  padding: 25px;
+  box-sizing: border-box;
+  border: 1px solid #dfdfdf;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.94);
+  width: 320px;
+  -webkit-keyframes: foot;
+}
+

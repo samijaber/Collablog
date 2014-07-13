@@ -1,0 +1,116 @@
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+export API_KEY = "sdfs"
+export API_KEY:"sdfs"
+export API_KEY="sdfs"
+export API_KEY: String="sdfs"
+sys.env
+sys.env()
+Scala.sys.env()
+scala.sys.env() += ("API_KEY", "sdfs")
+sys.env.get("API_KEY")
+sys.env.get("API_KEY");
+val x = Not a valid key: scala (similar: scalaHome, ivy-scala, ivyScala)
+val x = sys.env.get("API_KEY")
+API_KEY="sdf"
+envVars
+envVars += ("API_KEY", "SDF")
+envVars + ("API_KEY", "SDF")
+envVars("API_KEY", "SDF")
+envVars
+API_KEY
+API_KEY:
+API_KEY:"sdf"
+API_KEY:*
+API_KEY:*::
+API_KEY:key
+API_KEY:env
+API_KEY:env.get("API_KEY")
+"SDFS":API_KEY
+help
+tasks
+help
+help export
+export --last
+export --last 
+export API_KEY+
+export "API_KEY"+
+export 
+tasks
+help tasks
+help
+help session
+session list
+help append
+export API_KEY="sdfs"
+container:start
+~ ;copy-resources;aux-compile
+export
+tasks
+API_KEY <<= "asda"
+inspect
+inspect API_KEY
+~ ;copy-resources;aux-compile
+inspect API_KEY
+tasks
+export
+help
+inspect API_KEY
+~ ;copy-resources;aux-compile
+inspect API_KEY
+key: API_KEY, value: sd
+key:API_KEY, value: sd
+key:"API_KEY", value: sd
+getenv
+API_KEY
+export API_KEY
+export: API_KEY
+export key:API_KEY
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+tweets1
+tweets1;
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+last compile:managedSources
+container:start
+last compile:managedSources
+container:start
+last compile:managedSources
+container:start
+last compile:managedSources
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
+container:start
+~ ;copy-resources;aux-compile
