@@ -59,8 +59,8 @@ get("/auth/callback") {
 get("/blog") {
 	val respBody = TwitterOAuth.get("https://api.twitter.com/1.1/statuses/user_timeline.json", accTkn)
 	JSON.parseFull(respBody) match  {
-		case Some(l:List[Map[String,Any]]) => printTweets(l)
-		case _ => "Error occured. JSON not parsed correctly"
+		case Some(l:List[Map[String,Any]]) => ssp("/blog", "tweets" -> printTweets(l))
+		case _ => ssp("/blog", "tweets" -> "Error occured. JSON not parsed correctly")
 	}
 }
 

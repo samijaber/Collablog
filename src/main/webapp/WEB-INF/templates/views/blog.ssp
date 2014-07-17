@@ -1,0 +1,12 @@
+<%@ val tweets: List[Any] %>
+
+<!doctype html>
+<html>
+
+<body>
+	#for (t <- tweets)
+		<div class="tweet"> ${t} </div>
+	#end
+</body>
+
+</html>
