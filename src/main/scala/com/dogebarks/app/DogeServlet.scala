@@ -11,8 +11,9 @@ import org.scribe.model._
 
 import xml.{XML, NodeSeq}
 
+import scala.slick.jdbc.JdbcBackend.Database
 
-class DogeServlet extends DogebarksStack with ScalateSupport {
+class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport with SlickRoutes {
 var accTkn: Token = _;
 
 object Helpers {
@@ -57,6 +58,7 @@ get("/auth/callback") {
 }
 
 get("/blog") {
+	contentType="text/html"	
 	val respBody = TwitterOAuth.get("https://api.twitter.com/1.1/statuses/user_timeline.json", accTkn)
 	JSON.parseFull(respBody) match  {
 		case Some(l:List[Map[String,Any]]) => ssp("/blog", "tweets" -> printTweets(l))
