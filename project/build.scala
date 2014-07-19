@@ -20,12 +20,19 @@ object DogebarksBuild extends Build {
       name := Name,
       version := Version,
       scalaVersion := ScalaVersion,
-      resolvers += Classpaths.typesafeReleases,
+      resolvers ++= Seq(Classpaths.typesafeReleases,
+        "Sonatype Releases" at "http://oss.sonatype.org/content/repositories/releases"),
       libraryDependencies ++= Seq(
-        //Added dependencies
+        //Scribe & JSON dependencies
         "org.scribe" % "scribe" % "1.3.5",
         "org.scalatra" %% "scalatra-json" % "2.2.2",
         "org.json4s"   %% "json4s-jackson" % "3.2.6",
+        
+        //Slick Dependencies
+        "com.typesafe.slick" %% "slick" % "2.0.2",
+        "com.h2database" % "h2" % "1.3.166",
+        "c3p0" % "c3p0" % "0.9.1.2",
+
         //Default Dependencies
         "org.scalatra" %% "scalatra" % ScalatraVersion,
         "org.scalatra" %% "scalatra-scalate" % ScalatraVersion,
