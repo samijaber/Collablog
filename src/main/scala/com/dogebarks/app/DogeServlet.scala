@@ -13,7 +13,7 @@ import xml.{XML, NodeSeq}
 
 import scala.slick.jdbc.JdbcBackend.Database
 
-class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport with SlickRoutes {
+case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport with DataRoutes {
 var accTkn: Token = _;
 
 object Helpers {
