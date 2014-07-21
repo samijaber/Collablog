@@ -3,9 +3,9 @@
 <%@ val body: String %>
 
 <head>
-	<link rel="stylesheet" href="public/foundation.css" type="text/css">
-	<link rel="stylesheet" href="public/layout.css" type="text/css">
-	<link rel="stylesheet" href="public/comic-neue/font.css" type="text/css">
+	<link rel="stylesheet" href="/public/foundation.css" type="text/css">
+	<link rel="stylesheet" href="/public/layout.css" type="text/css">
+	<link rel="stylesheet" href="/public/comic-neue/font.css" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 
@@ -17,9 +17,9 @@
 
 <main>
 <h1>
-<img class="doge" src="public/images/doge.jpeg">
+<img class="doge" src="/public/images/doge.jpeg">
 DogeBarks
-<img class="doge" src="public/images/doge.jpeg">
+<img class="doge" src="/public/images/doge.jpeg">
 </h1><!-- </a> -->
 
 <%= unescape(body) %>
