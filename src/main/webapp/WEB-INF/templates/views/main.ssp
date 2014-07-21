@@ -1,0 +1,10 @@
+<%@ val name: String%>
+Welcome to DogeBarks, ${name}. You Are logged in!
+<br> <a href="/logout"> Log Out</a>
+
+<p>
+<form action="main/new_blog">
+	Hashtag: <input type="text" name="hashtag">
+	Blog Title: <input type="text" name="title">
+	<input type="submit" value="Create Blog">
+</form>

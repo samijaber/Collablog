@@ -1,12 +1,3 @@
-<%@ val tweets: List[Any] %>
+<%@ val title: String %>
 
-<!doctype html>
-<html>
-
-<body>
-	#for (t <- tweets)
-		<div class="tweet"> ${t} </div>
-	#end
-</body>
-
-</html>
+Blog ${title} created. Woof.
