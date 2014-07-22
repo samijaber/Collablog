@@ -2,16 +2,17 @@ package com.dogebarks.app
 
 import org.scalatra._
 import scalate.ScalateSupport
+import scala.collection.JavaConversions._
 import scala.util.parsing.json._
 
-import org.scribe.builder.api.TwitterApi
-import org.scribe.builder.ServiceBuilder
-import org.scribe.oauth.OAuthService
-import org.scribe.model._
+import org.scribe.model.Token
+
+import twitter4j.{Twitter, TwitterFactory}
+import twitter4j.conf._
+import twitter4j._
 
 import Schema._
 import scala.slick.driver.H2Driver.simple._
-import scala.slick.jdbc.JdbcBackend.Database
 import scala.slick.jdbc.JdbcBackend.Database.dynamicSession
 import scala.slick.lifted.TableQuery._
 import scala.slick.jdbc.meta._
@@ -20,6 +21,29 @@ case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport 
 	val ddls = blogs.ddl ++ contributors.ddl ++ tweets.ddl
 
 	object Helpers {
+		def add_contributor(hashtag: String, user: String) = {
+			val twitter: Twitter = new TwitterFactory (new ConfigurationBuilder()
+				  .setOAuthConsumerKey(Secret.apiKey)
+				  .setOAuthConsumerSecret(Secret.apiSecret)
+				  .setOAuthAccessToken(SessionUser.accTkn.get.getToken)
+				  .setOAuthAccessTokenSecret(SessionUser.accTkn.get.getSecret)
+				  .build)
+				.getInstance
+
+	    val query: twitter4j.Query = new twitter4j.Query("#APMAS");
+	    val result: QueryResult = twitter.search(query);
+	    
+	    for (status <- result.getTweets()) {
+	        println("@" + status.getUser().getScreenName() + ":" + status.getText())
+	    }
+
+			db withDynSession {
+				contributors += (user, hashtag, "date here")
+				contributors.insertStatement
+				contributors.insertInvoker
+			}
+		}
+
 		def get_username(): Option[String] = {
 			try { 
 				val respBody = TwitterOAuth.get("https://api.twitter.com/1.1/account/verify_credentials.json", SessionUser.accTkn.get)
@@ -85,15 +109,13 @@ case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport 
 
 	get("/main/new_blog"){
 		db withDynSession {
-			blogs += (params("hashtag"), SessionUser.name.get, params("title"))
+			blogs += (params("hashtag"), SessionUser.name.get, params("title"), "date here")
 			blogs.insertStatement
 			blogs.insertInvoker
-			
-			contributors += (SessionUser.name.get, params("hashtag"))
-			contributors.insertStatement
-			contributors.insertInvoker
 		}
 
+		Helpers.add_contributor(params("hashtag"), SessionUser.name.get)
+		
 		redirect("/main/blog/" + params("title"))
 	}
 

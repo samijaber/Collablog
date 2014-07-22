@@ -28,6 +28,9 @@ object DogebarksBuild extends Build {
         "org.scalatra" %% "scalatra-json" % "2.2.2",
         "org.json4s"   %% "json4s-jackson" % "3.2.6",
         
+        //twitter4j
+        "org.twitter4j" % "twitter4j-core" % "4.0.2",
+
         //Slick Dependencies
         "com.typesafe.slick" %% "slick" % "2.0.2",
         "com.h2database" % "h2" % "1.3.166",
