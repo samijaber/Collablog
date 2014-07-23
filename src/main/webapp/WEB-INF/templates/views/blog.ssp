@@ -1,3 +1,26 @@
 <%@ val title: String %>
+<%@ val tweets: List[Tuple6[String, String, String, String, String, Option[String]]] %>
 
-Blog ${title} created. Woof.
+Blog: ${title}. Woof
+<p>
+
+<form action="new_contributor">
+	Contributor: <input type="text" name="user">
+	<input type="hidden" name="hashtag" value=${title}>
+	<input type="submit" value="Add A Contributor">
+</form>
+
+<p>
+
+#for (t <- tweets)
+	<div class="tweet">
+		<a class="link" href="https://twitter.com/${t._3}">${t._3}</a> (${t._5}): 
+			${t._2} 
+		<br>
+		#if (!t._6.isEmpty)
+			<img src="${t._6}"> <br>
+		#end
+		<a class="link" href="https://twitter.com/${t._3}/status/${t._1}">Link</a>
+	</div>
+	<p>
+#end

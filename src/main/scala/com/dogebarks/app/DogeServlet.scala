@@ -5,6 +5,9 @@ import scalate.ScalateSupport
 import scala.collection.JavaConversions._
 import scala.util.parsing.json._
 
+import java.text.SimpleDateFormat
+import java.util.Date
+
 import org.scribe.model.Token
 
 import twitter4j.{Twitter, TwitterFactory}
@@ -19,9 +22,10 @@ import scala.slick.jdbc.meta._
 
 case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport {
 	val ddls = blogs.ddl ++ contributors.ddl ++ tweets.ddl
+	val timeFormat = new SimpleDateFormat()
 
 	object Helpers {
-		def add_contributor(hashtag: String, user: String) = {
+		def add_contributor(hashtag: String, user: String, since: String) = {
 			val twitter: Twitter = new TwitterFactory (new ConfigurationBuilder()
 				  .setOAuthConsumerKey(Secret.apiKey)
 				  .setOAuthConsumerSecret(Secret.apiSecret)
@@ -30,17 +34,35 @@ case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport 
 				  .build)
 				.getInstance
 
-	    val query: twitter4j.Query = new twitter4j.Query("#APMAS");
-	    val result: QueryResult = twitter.search(query);
-	    
-	    for (status <- result.getTweets()) {
-	        println("@" + status.getUser().getScreenName() + ":" + status.getText())
-	    }
+
+			val query: twitter4j.Query = new twitter4j.Query("#" + hashtag + " from:" + user);
+			val result: QueryResult = twitter.search(query);
 
 			db withDynSession {
-				contributors += (user, hashtag, "date here")
+		  //   val q1 = for { b <- blogs if b.hashtag === hashtag } yield b.refreshURL
+				// var query: twitter4j.Query = if (q1.first.isEmpty)
+				// 	new twitter4j.Query("#" + hashtag + " from:" + user);
+	   //  	else
+	   //  		new twitter4j.Query("#" + hashtag + " from:" + user + q1.first.get);
+
+				// val result: QueryResult = twitter.search(query);
+
+				val time = timeFormat.format(new Date())
+				contributors += (user, hashtag, time)
 				contributors.insertStatement
 				contributors.insertInvoker
+				
+		    for (status <- result.getTweets()) {
+		    	val date = timeFormat.format(status.getCreatedAt())
+		    	val mediaUrl = {
+		    		val mediaArr = status.getMediaEntities()
+		    		if (mediaArr.isEmpty)
+		    			None
+	    			else
+							Some(mediaArr(0).getMediaURL())
+		    	}
+		    	tweets += (status.getId().toString(), status.getText(), status.getUser().getScreenName(), hashtag, date, mediaUrl)
+		    }
 			}
 		}
 
@@ -56,24 +78,10 @@ case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport 
 			}
 		}
 
-		def printTweets(tweets:List[Map[String, Any]]): List[Any] = {
-			tweets match {
-				case tweet :: ts => tweet("text") :: printTweets(ts)
-				case Nil => Nil
-			}
-		}
-
 		def auth = if (SessionUser.accTkn.isEmpty) redirect("/login")
 
-		def shutdown = {
-			db withDynSession {
-				ddls.drop
-			}
-		}
-
-		def insert(table: TableQuery[_]) = {
-			table.insertStatement
-			table.insertInvoker
+		def shutdown = db withDynSession {
+			ddls.drop
 		}
 	}
 	import Helpers._
@@ -104,23 +112,55 @@ case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport 
 	}
 
 	get("/main") {
-		ssp("/main", "name" -> SessionUser.name.get)
+		db withDynSession {
+			val q = for {
+				b <- blogs if b.owner === SessionUser.name.get
+			} yield b
+
+			ssp("/main", "name" -> SessionUser.name.get, "blogs" -> q.list())
+		}
 	}
 
-	get("/main/new_blog"){
+	get("/main/new_blog") {
+		val time = timeFormat.format(new Date())
 		db withDynSession {
-			blogs += (params("hashtag"), SessionUser.name.get, params("title"), "date here")
+			blogs += (params("hashtag"), SessionUser.name.get, params("title"), time, None)
 			blogs.insertStatement
 			blogs.insertInvoker
 		}
 
-		Helpers.add_contributor(params("hashtag"), SessionUser.name.get)
-		
-		redirect("/main/blog/" + params("title"))
+		Helpers.add_contributor(params("hashtag"), SessionUser.name.get, time)
+		redirect("/main/blog/" + params("hashtag"))
 	}
 
 	get("/main/blog/:id") {
-		ssp("/blog", "title" -> params("id"))
+		db withDynSession {
+			//get last blog update time
+			val q1 = for {
+				b <- blogs if b.hashtag === params("id")
+			} yield b
+			val q1Arr = q1.list()
+
+			//get all users 
+			val q2 = for {
+				u <- contributors if u.hashtag === params("id")
+			} yield u
+			for (users <- q2.list()) {
+				// Helpers.add_contributor(params("id"), users._1, "")
+			}
+
+			//Retrieve saved tweets with this hashtag ranked by date
+			val q3 = for {
+				t <- tweets if t.hashtag === params("id")
+			} yield t
+			ssp("/blog", "title" -> params("id"), "tweets" -> q3.list())
+		}
+	}
+
+	get("/main/blog/new_contributor") {
+		val time = timeFormat.format(new Date())
+		Helpers.add_contributor(params("hashtag"), params("user"), time)
+		redirect("/main/blog/" + params("hashtag"))
 	}
 
 	//=====

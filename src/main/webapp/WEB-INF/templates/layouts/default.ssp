@@ -26,19 +26,6 @@ DogeBarks
 
  </main>
 </body>
-<script>
-function imgify(text) {
-    var urlRegex = /(https?:\/\/[^\s]+)/g;
-    return text.replace(urlRegex, function(url) {
-        return '<a href="' + url + '"><img onerror="this.style.display=\'none\'" src="' + url + '">' + url + '</a>';
-    })
-}
-var tweets = document.querySelectorAll("div.tweet");
-for(var i = 0; i < tweets.length; i++)
-{
-  tweets[i].innerHTML = imgify(tweets[i].innerText);
-}
-</script>
 <footer>
 made with love by <a href="http://github.com/samijaber">@samjabz</a> and <a href="http://github.com/tlwr">@tlwr</a>
 </footer>

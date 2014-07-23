@@ -1,4 +1,6 @@
 <%@ val name: String%>
+<%@ val blogs: List[Tuple5[String, String, String, String, String]] %>
+
 Welcome to DogeBarks, ${name}. You Are logged in!
 <br> <a href="/logout"> Log Out</a>
 
@@ -6,5 +8,13 @@ Welcome to DogeBarks, ${name}. You Are logged in!
 <form action="main/new_blog">
 	Hashtag: <input type="text" name="hashtag">
 	Blog Title: <input type="text" name="title">
-	<input type="submit" value="Create Blog">
+	<input type="submit" value="Create A New Blog">
 </form>
+
+<p>
+
+#for (b <- blogs)
+	<div class="blogs">
+		<a href="main/blog/${b._1}">${b._3}</a>
+	</div>
+#end

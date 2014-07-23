@@ -38,22 +38,10 @@ main
   background-color: rgba(255, 255, 255, 0.94);
 }
 
-ul.tweetc
-{
-  list-style: none;
-}
-
-ul.tweetc>li
-{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .tweet
 {
   flex-basis: 100%;
-  background-color: #6F6F6F;
+  background-color: #414141;
   color: white;
   padding: 25px;
   border-radius: 25px;
@@ -62,6 +50,7 @@ ul.tweetc>li
 
 div.tweet img
 {
+  height: 500px;
   padding: 25px;
   box-sizing: border-box;
 }
@@ -69,6 +58,11 @@ div.tweet img
 .doge
 {
   width: 50px;
+}
+
+a
+{
+  color: #bfb381;
 }
 
 footer
