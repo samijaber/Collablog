@@ -3,13 +3,13 @@ package com.dogebarks.app
 import scala.slick.driver.H2Driver.simple._
 
 object Schema {
-	class Blogs(tag: Tag) extends Table[(String, String, String, String, Option[String])](tag, "BLOGS") {
+	class Blogs(tag: Tag) extends Table[(String, String, String, String, Long)](tag, "BLOGS") {
 		def hashtag 		= column[String]("HASHTAG", O.PrimaryKey)
 		def owner 			= column[String]("OWNER")
 		def title				= column[String]("TITLE")
 		def createdAt 	= column[String]("CREATEDAT")
-		def refreshURL = column[Option[String]]("LASTUPDATED")
-		def * 					= (hashtag, owner, title, createdAt, refreshURL)
+		def lastId		 	= column[Long]("LASTUPDATED")
+		def * 					= (hashtag, owner, title, createdAt, lastId)
 	}
 	val blogs = TableQuery[Blogs]
 
