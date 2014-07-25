@@ -1,6 +1,6 @@
-Collaborate. Blog. Collablog.
+DogeBarks. Woof.
 
-to run (inside dogebarks/):
+to run:
 
-$ API_KEY=<twitter key> API_SECRET=<twitter secret> ./sbt
-> container:start
+API_KEY=<twitter key> API_SECRET=<twitter secret> ./sbt
+container:start
