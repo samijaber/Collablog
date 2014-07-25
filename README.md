@@ -2,5 +2,6 @@ DogeBarks. Woof.
 
 to run:
 
-> API_KEY=<twitter key> API_SECRET=<twitter secret> ./sbt
+> API_KEY=(API Key here) API_SECRET=(API Secret Here) ./sbt
+
 > container:start
