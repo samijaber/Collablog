@@ -8,7 +8,7 @@ import org.scribe.model._
 class UnauthorizedException extends RuntimeException
 
 object TwitterOAuth {
-	def service : OAuthService= new ServiceBuilder()
+	def service: OAuthService= new ServiceBuilder()
 					.provider(classOf[TwitterApi.SSL])
 					//provide secrets when launching server
 					.apiKey(Secret.apiKey)
