@@ -13,7 +13,7 @@ object TwitterOAuth {
 					//provide secrets when launching server
 					.apiKey(Secret.apiKey)
 					.apiSecret(Secret.apiSecret)
-					.callback("http://0.0.0.0:8080/auth/callback")
+					.callback("http://dogebarks.com/auth/callback")
 					.build
 
 	def requestToken(): Token = service.getRequestToken
