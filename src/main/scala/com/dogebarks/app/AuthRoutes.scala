@@ -22,8 +22,8 @@ trait AuthRoutes extends ScalatraServlet with ScalateSupport {
 	def auth = {
 		initStorage 
 		session("sessionStorage") match {
-			case None => redirect("/login")
-			case Some(x: SessionUser) => if (x.name.isEmpty) redirect("/login")
+			case x: SessionUser => if (x.name.isEmpty) redirect("/login")
+			case _ => redirect("/login")
 		}
 	}
 
