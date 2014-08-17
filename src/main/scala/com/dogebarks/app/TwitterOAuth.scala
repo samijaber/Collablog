@@ -11,8 +11,8 @@ object TwitterOAuth {
 	def service: OAuthService= new ServiceBuilder()
 					.provider(classOf[TwitterApi.SSL])
 					//provide secrets when launching server
-					.apiKey(Secret.apiKey)
-					.apiSecret(Secret.apiSecret)
+					.apiKey(sys.env("API_KEY"))
+					.apiSecret(sys.env("API_SECRET"))
 					.callback("http://dogebarks.com/auth/callback")
 					.build
 
