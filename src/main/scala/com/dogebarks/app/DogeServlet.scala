@@ -14,7 +14,7 @@ import scala.slick.lifted.TableQuery._
 import scala.slick.jdbc.meta._
 
 case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport with AuthRoutes {
-	val timeFormat = new SimpleDateFormat()
+	val timeFormat   = new SimpleDateFormat()
 
 	def add_contributor(hashtag: String, user: String) = {
 		db withDynSession {
