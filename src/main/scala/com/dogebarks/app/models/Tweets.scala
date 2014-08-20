@@ -1,6 +1,7 @@
 package com.dogebarks.app
 
 import scala.slick.driver.H2Driver.simple._
+import Schema._
 
 class Tweets(tag: Tag) extends Table[(String, String, String, String, String, Option[String])](tag, "TWEETS") {
 	def id 				= column[String]("URL", O.PrimaryKey)
@@ -11,5 +12,5 @@ class Tweets(tag: Tag) extends Table[(String, String, String, String, String, Op
 	def media			= column[Option[String]]("MEDIA")
 	def * 				= (id, text, userId, hashtag, createdAt, media)
 
-	// def writer = ("WRITER", userId, contributors)(_.userId)
+	def writer = foreignKey("WRITER", userId, contributors)(_.userId)
 }

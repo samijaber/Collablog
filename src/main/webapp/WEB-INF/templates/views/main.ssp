@@ -5,7 +5,7 @@ Welcome to DogeBarks, ${name}. You Are logged in!
 <br> <a href="/logout"> Log Out</a>
 
 <p>
-<form action="main/new_blog">
+<form action="new_blog">
 	Hashtag: <input type="text" name="hashtag">
 	Blog Title: <input type="text" name="title">
 	<input type="submit" value="Create A New Blog">
@@ -15,6 +15,6 @@ Welcome to DogeBarks, ${name}. You Are logged in!
 
 #for (b <- blogs)
 	<div class="blogs">
-		<a href="main/blog/${b._1}">${b._3}</a>
+		<a href="${b._2}/blog/${b._1}">${b._3}</a>
 	</div>
 #end

@@ -1,6 +1,7 @@
 package com.dogebarks.app
 
 import scala.slick.driver.H2Driver.simple._
+import Schema._
 
 class Contributors(tag: Tag) extends Table[(String, String, String)](tag, "CONTRIBUTORS") {
 	def userId 		= column[String]("USERID")
@@ -8,5 +9,5 @@ class Contributors(tag: Tag) extends Table[(String, String, String)](tag, "CONTR
 	def addedAt 	= column[String]("ADDEDAT")
 	def * 				= (userId, hashtag, addedAt)
 
-	// def story 		= foreignKey("STORY", hashtag, blogs)(_.hashtag)
+	def story 		= foreignKey("STORY", hashtag, blogs)(_.hashtag)
 }

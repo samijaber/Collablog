@@ -6,27 +6,7 @@ import scala.util.parsing.json._
 import org.scribe.model.Token
 import DogeServlet._
 
-trait AuthRoutes extends ScalatraServlet with ScalateSupport {
-	case class SessionUser(name: String, reader: TweetReader)
-
-	def sessionStorage(): SessionUser = {
-		try { 
-			session("sessionStorage").asInstanceOf[SessionUser]
-		} catch {
-		  case e: Exception => redirect("/login") 
-		}
-	}
-
-	def initStorage = if (!session.keySet.exists(_ == "sessionStorage")) session.put("sessionStorage", None)
-
-	def auth = {
-		initStorage 
-		session("sessionStorage") match {
-			case x: SessionUser => if (x.name.isEmpty) redirect("/login")
-			case _ => redirect("/login")
-		}
-	}
-
+trait AuthRoutes extends ScalatraServlet with ScalateSupport with Users {
 	def get_username(accToken: Token): Option[String] = {
 		try { 
 			val respBody = TwitterOAuth.get("https://api.twitter.com/1.1/account/verify_credentials.json", accToken)
@@ -39,13 +19,12 @@ trait AuthRoutes extends ScalatraServlet with ScalateSupport {
 		}
 	}
 
-	get("/logout") {
-		val sess = sessionStorage()
+	get("/auth/logout") {
 		session.put("sessionStorage", None)
-		redirect("/main")
+		redirect("/")
 	}
 
-	get("/login") {
+	get("/auth/login") {
 		ssp("/login")
 	}
 
@@ -60,10 +39,14 @@ trait AuthRoutes extends ScalatraServlet with ScalateSupport {
 		val accToken: Token = TwitterOAuth.getAccessToken(requestToken, params("oauth_verifier"))
 		val name: Option[String] = get_username(accToken)
 		if (name.isEmpty)
-			redirect("/logout")
+			redirect("auth/logout")
 			
 		val sessionx = SessionUser(name.get, new TweetReader(accToken))
 		session.put("sessionStorage", sessionx) 
 		redirect("/")
+	}
+
+	get(!loggedIn) {
+		redirect("/auth/login")
 	}
 }

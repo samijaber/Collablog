@@ -20,8 +20,6 @@ case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport 
 		db withDynSession {
 			val time = timeFormat.format(new Date())
 			contributors += (user, hashtag, time)
-			contributors.insertStatement
-			contributors.insertInvoker
 		}
 	}
 
@@ -34,38 +32,35 @@ case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport 
 		}
 	}
 
-	before("/main*") {
-		auth
-	}
-
 	get("/") {
-		auth
-		redirect("/main")
+		redirect("/user/" + sessionStorage.name)
 	}
 
-	get("/main") {
+	get("/user/:name") {
 		db withDynSession {
 			val q = for {
-				b <- blogs if b.owner === sessionStorage().name
+				b <- blogs if b.owner === params("name")
 			} yield b
 
-			ssp("/main", "name" -> sessionStorage().name, "blogs" -> q.list())
+			ssp("/main", "name" -> params("name"), "blogs" -> q.list())
 		}
 	}
 
-	get("/main/new_blog") {
+	get("/user/:name/new_blog") {
 		val time = timeFormat.format(new Date())
 		db withDynSession {
-			blogs += (params("hashtag"), sessionStorage().name, params("title"), time, 0L)
-			blogs.insertStatement
-			blogs.insertInvoker
+			blogs += (params("hashtag"), sessionStorage.name, params("title"), time, 0L)
 		}
 
-		add_contributor(params("hashtag"), sessionStorage().name)
-		redirect("/main/blog/" + params("hashtag"))
+		add_contributor(params("hashtag"), sessionStorage.name)
+		redirect(sessionStorage.name + "/blog/" + params("hashtag"))
 	}
 
-	get("/main/blog/:id") {
+	get("/blog/:id/delete_blog") {
+		// delete_blog(params("title"))
+	}
+
+	get("/blog/:id") {
 		db withDynSession {
 			//get last blog update time
 			val q1 = for {
@@ -78,7 +73,7 @@ case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport 
 				u <- contributors if u.hashtag === params("id")
 			} yield u
 			for (users <- q2.list()) {
-				sessionStorage().reader.update_tweets(db, params("id"), users._1)
+				sessionStorage.reader.update_tweets(db, params("id"), users._1)
 			}
 
 			//Retrieve saved tweets with this hashtag ranked by date
@@ -90,9 +85,9 @@ case class DogeServlet(db: Database) extends DogebarksStack with ScalateSupport 
 		}
 	}
 
-	get("/main/blog/new_contributor") {
+	get("/blog/:title/new_contributor") {
 		val time = timeFormat.format(new Date())
 		add_contributor(params("hashtag"), params("user"))
-		redirect("/main/blog/" + params("hashtag"))
+		redirect("/blog/" + params("hashtag"))
 	}
 }

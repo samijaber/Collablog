@@ -26,6 +26,7 @@ trait DogebarksStack extends ScalatraServlet with ScalateSupport {
   
 
   notFound {
+    // redirect("/")
     // remove content type in case it was set through an action
     contentType = null
     // Try to render a ScalateTemplate if no route matched
